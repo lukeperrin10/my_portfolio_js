@@ -14,7 +14,7 @@ const header = () => {
   headerContainer.classList.add("ui", "inverted", "segment");
   let nav = document.createElement("nav");
   nav.classList.add("ui", "inverted", "secondary", "menu");
-  let tabs = ["My Portfolio", "About Me", "My Projects"];
+  let tabs = ["My Portfolio", "About Me", "My Projects", 'Contact'];
   tabs.forEach((tab) => {
     let tabLink = document.createElement("a");
     tabLink.classList.add("item");
@@ -29,18 +29,29 @@ const header = () => {
   root.appendChild(headerContainer);
 };
 
+
+
+
 const startPage = async (tab) => {
   if (tab === "About Me") {
     mainContainer.innerHTML =
       "<h2>About Me</h2> <p>Welcome to my portfolio, here you will be able to read about me.</p>";
   } else if (tab === "My Projects") {
     await displayProjects();
-  } else {
+  } else if (tab === 'Contact') {
+    mainContainer.innerHTML =
+      "<h2><u>Contact details</u></h2> <h3><li>Telephone: 0736801669</li><li>Email: lukeperrin27@gmail.com</li><li><a href=https://github.com/lukeperrin10 target=_blank>Github</></li><li><a href=https://www.twitch.tv/welshthor target=_blank>Twitch</></li><li><a href=https://www.linkedin.com/in/luke-perrin/ target=_blank>Linkedin</></li></h3> " 
+
+    } else {
     mainContainer.innerHTML = "<h2>Hello World</h2>";
   }
   mainContainer.classList.add("ui", "container");
   root.appendChild(mainContainer);
 };
+
+const contacts = () => {
+
+}
 
 const displayProjects = async () => {
   let response = await (await fetch("./js/projects.json")).json();
@@ -66,6 +77,8 @@ const displayProjects = async () => {
   });
   mainContainer.appendChild(projectsContainer);
 };
+
+
 
 const footer = () => {
   let footer = document.createElement("footer");
