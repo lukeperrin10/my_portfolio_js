@@ -31,7 +31,6 @@ const header = () => {
 
 
 
-
 const startPage = async (tab) => {
   if (tab === "About Me") {
     mainContainer.innerHTML =
@@ -41,11 +40,11 @@ const startPage = async (tab) => {
   } else if (tab === 'Contact') {
     mainContainer.innerHTML = `
       <h2><u>Contact details</u></h2> 
-      <h3><li>Telephone: 0736801669</li>
-      <li>Email: lukeperrin27@gmail.com</li>
-      <li><a href=https://github.com/lukeperrin10 target=_blank>Github</></li>
-      <li><a href=https://www.twitch.tv/welshthor target=_blank>Twitch</></li>
-      <li><a href=https://www.linkedin.com/in/luke-perrin/ target=_blank>Linkedin</></li></h3>
+      ${telphone}
+      ${email}
+      ${github}
+      ${twitch}
+      ${linkedin}
       `
     } else {
     mainContainer.innerHTML = "<h2>Hello World</h2>";
@@ -99,3 +98,10 @@ document.addEventListener("DOMContentLoaded", () => {
   startPage();
   footer();
 });
+
+
+const twitch = "<li><a href=https://www.twitch.tv/welshthor target=_blank>Twitch</></li>"
+const github = "<li><a href=https://github.com/lukeperrin10 target=_blank>Github</></li>"
+const linkedin = "<li><a href=https://www.linkedin.com/in/luke-perrin/ target=_blank>Linkedin</></li></h3>"
+const email = "<li>Email: lukeperrin27@gmail.com</li>"
+const telphone = "<h3><li>Telephone: 0736801669</li>"
