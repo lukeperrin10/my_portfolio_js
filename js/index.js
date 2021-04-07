@@ -39,9 +39,14 @@ const startPage = async (tab) => {
   } else if (tab === "My Projects") {
     await displayProjects();
   } else if (tab === 'Contact') {
-    mainContainer.innerHTML =
-      "<h2><u>Contact details</u></h2> <h3><li>Telephone: 0736801669</li><li>Email: lukeperrin27@gmail.com</li><li><a href=https://github.com/lukeperrin10 target=_blank>Github</></li><li><a href=https://www.twitch.tv/welshthor target=_blank>Twitch</></li><li><a href=https://www.linkedin.com/in/luke-perrin/ target=_blank>Linkedin</></li></h3> " 
-
+    mainContainer.innerHTML = `
+      <h2><u>Contact details</u></h2> 
+      <h3><li>Telephone: 0736801669</li>
+      <li>Email: lukeperrin27@gmail.com</li>
+      <li><a href=https://github.com/lukeperrin10 target=_blank>Github</></li>
+      <li><a href=https://www.twitch.tv/welshthor target=_blank>Twitch</></li>
+      <li><a href=https://www.linkedin.com/in/luke-perrin/ target=_blank>Linkedin</></li></h3>
+      `
     } else {
     mainContainer.innerHTML = "<h2>Hello World</h2>";
   }
@@ -50,6 +55,9 @@ const startPage = async (tab) => {
 };
 
 const contacts = () => {
+  mainContainer.innerHTML = ""
+  let Conactlistcontainer = document.createElement('div')
+  Conactlistcontainer.classList.add('ui', 'list')
 
 }
 
